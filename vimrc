@@ -1,20 +1,33 @@
+"reset vim config with /s 
+map <leader>s :source ~/.vimrc<CR>
+
+set nowrap
 set tabstop=2 
 set shiftwidth=2
 set expandtab
+set smartindent
+set autoindent
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+
+filetype on
+filetype indent on
 syntax on
+
+set lines=35 columns=150
+set colorcolumn=100
+set number
+set showmatch
 
 "plugins
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'gcorne/vim-sass-lint'
-Plug 'mattn/emmet-vim'
-Plug 'Chiel92/vim-autoformat'
+Plug 'ervandew/supertab'
+Plug 'valloric/youcompleteme'
 call plug#end()
 
 "Color config
