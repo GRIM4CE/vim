@@ -33,6 +33,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'gcorne/vim-sass-lint'
 call plug#end()
 
+"Functions
+fun! SetScssConfig()
+  let scssConfig = findfile('.scss-lint.yml', '.;')
+  if scssConfig != ''
+    let b:syntastic_scss_scss_lint_args = '--config ' . scssConfig
+  endif
+endf
+
 "Color config
 colorscheme gruvbox
 
@@ -57,6 +65,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+autocmd FileType scss :call SetScssConfig()
 
 "inoremap
 :inoremap jj <esc>
