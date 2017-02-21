@@ -42,6 +42,7 @@ fun! SetScssConfig()
 endf
 
 "Color config
+:color slate
 colorscheme gruvbox
 
 "Airline config 
