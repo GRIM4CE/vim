@@ -1,7 +1,10 @@
-let mapleader=" "
+"Key Bindings
+let mapleader=","
+
+:inoremap jj <esc>
 
 "reset vim config with /s 
-map <leader>s :source ~/.vimrc<CR>
+map <leader>rc :source ~/.vimrc<CR>
 
 set nowrap
 set tabstop=2 
@@ -23,14 +26,41 @@ set showmatch
 
 "plugins
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
+
+"Logic plugins
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-sensible'
+Plug 'kana/vim-smartinput'
+Plug 'tpope/vim-surround'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'Shougo/neocomplete.vim'
+
+"General Utilities
 Plug 'kien/ctrlp.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'valloric/youcompleteme'
-Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdcommenter'
+Plug 'c9s/bufexplorer'
+Plug 'vim-airline/vim-airline'
+
+"Color Schemes
+Plug 'morhetz/gruvbox'
+
+"Language plugins
 Plug 'gcorne/vim-sass-lint'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-scripts/JavaScript-Indent'
+Plug 'elzr/vim-json'
+
+"Program Helpers
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/syntastic'
+Plug 'mattn/emmet-vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-ragtag'
+Plug 'skammer/vim-css-color'
+Plug 'junegunn/vim-easy-align'
+Plug 'othree/javascript-libraries-syntax.vim'
+
 call plug#end()
 
 "Functions
@@ -53,6 +83,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 "CtrlP config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.sw*,*.zip,*.tar.*,*.tar,.git/*,*/node_modules/*,*/vendor/*,*/build/*,*/bin/*
 
 "syntastic config
 let g:syntastic_sass_checkers=["sasslint"]
@@ -67,7 +98,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"Set Scss Linter
 autocmd FileType scss :call SetScssConfig()
-
-"inoremap
-:inoremap jj <esc>
