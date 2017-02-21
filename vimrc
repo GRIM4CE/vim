@@ -1,3 +1,5 @@
+let mapleader=" "
+
 "reset vim config with /s 
 map <leader>s :source ~/.vimrc<CR>
 
@@ -25,9 +27,10 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'gcorne/vim-sass-lint'
-Plug 'ervandew/supertab'
 Plug 'valloric/youcompleteme'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
+Plug 'gcorne/vim-sass-lint'
 call plug#end()
 
 "Color config
