@@ -1,9 +1,24 @@
 "Key Bindings
 let mapleader=","
 
-:inoremap jj <esc>
+nnoremap ; :
 
-"reset vim config with /s 
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+noremap   <Home>   <NOP>
+noremap   <End>    <NOP>
+inoremap  <Esc>    <NOP>
+
+nnoremap <leader>ww :w<CR>
+
+inoremap jj <ESC>
+inoremap jk <ESC>
+
+nnoremap H ^
+nnoremap L $
+
 map <leader>rc :source ~/.vimrc<CR>
 
 set nowrap
@@ -14,6 +29,7 @@ set smartindent
 set autoindent
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+set undofile
 
 filetype on
 filetype indent on
@@ -23,6 +39,13 @@ set lines=35 columns=150
 set colorcolumn=100
 set number
 set showmatch
+set cursorline
+set autochdir
+set hidden
+
+" Tabs and extra whitespace are evil, so let's highlight them with some fun characters.
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
 
 "plugins
 call plug#begin('~/.vim/plugged')
