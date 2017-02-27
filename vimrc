@@ -62,6 +62,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'c9s/bufexplorer'
 Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 
 "Color Schemes
 Plug 'morhetz/gruvbox'
@@ -102,6 +103,9 @@ colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:tmuxline_preset = 'tmux'
+let g:airline#extensions#tmuxline#enabled = 0
 
 "CtrlP config
 let g:ctrlp_map = '<c-p>'
