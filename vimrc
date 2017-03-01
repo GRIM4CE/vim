@@ -13,6 +13,9 @@ inoremap  <Esc>    <NOP>
 
 nnoremap <leader>ww :w<CR>
 
+nnoremap :bn :bnext
+nnoremap :bp :bprev
+
 inoremap jj <ESC>
 inoremap jk <ESC>
 
